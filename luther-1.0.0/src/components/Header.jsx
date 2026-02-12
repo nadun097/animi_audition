@@ -58,7 +58,7 @@ function Header() {
     <header className={`s-header`}>
       <div className="header-mobile">
         <span className="mobile-home-link">
-          <a href="/">Luther.</a>
+          <a href="/">Nadun Anjana.</a>
         </span>
         <a
           className={`mobile-menu-toggle ${menuOpen ? 'is-clicked' : ''}`}
@@ -77,7 +77,7 @@ function Header() {
           <ul>
             <li>
               <a href="/" className="home-link">
-                Luther.
+                Nadun Anjana.
               </a>
             </li>
             {navLinks.map((link) => (

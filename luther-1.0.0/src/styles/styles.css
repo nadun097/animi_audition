@@ -1,5 +1,5 @@
 /* =================================================================== 
- * Luther Main Stylesheet
+ * Nadun Anjana Main Stylesheet
  * Template Ver. 1.0.0
  * 02-15-2021
  * ------------------------------------------------------------------
@@ -75,12 +75,12 @@
 /* ------------------------------------------------------------------- 
  * ## fonts 
  * ------------------------------------------------------------------- */
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Serif+Text:ital@0;1&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
 :root {
 
     --font-1 : "Public Sans", sans-serif;
-    --font-2 : "DM Serif Display", serif;
+    --font-2 : "Archivo", sans-serif;
 
     /* monospace
     */
@@ -2686,11 +2686,67 @@ img.u-pull-left {
 }
 
 .text-huge-title {
-    --text-huge : 10.8rem;
-    font-size   : var(--text-huge);
-    line-height : 1.0740;
-    margin-top  : 0;
+    --text-huge    : 10.8rem;
+    font-size      : var(--text-huge);
+    line-height    : 1.0740;
+    margin-top     : 0;
+    padding-top    : var(--vspace-1);
+    padding-bottom : var(--vspace-1);
+    position       : relative;
 }
+
+.text-huge-title::before,
+.text-huge-title::after {
+    content          : "";
+    position         : absolute;
+    left             : 50%;
+    transform        : translateX(-50%);
+    width            : 100vw;
+    height           : 1px;
+    background-color : rgba(255, 255, 255, 0.15);
+}
+
+.text-huge-title::before {
+    top : 0;
+}
+
+.text-huge-title::after {
+    bottom : 0;
+}
+
+/* vertical guide lines */
+.text-huge-title .vline {
+    position         : absolute;
+    top              : 0;
+    width            : 1px;
+    height           : 100%;
+    background-color : rgba(255, 255, 255, 0.15);
+    pointer-events   : none;
+    z-index          : 0;
+}
+
+/* line 1: left edge of paragraph */
+.text-huge-title .vline--1 {
+    left : 0;
+}
+
+/* line 2: text starting point (same as content left edge) */
+.text-huge-title .vline--2 {
+    left   : -60px;
+    height : 1400%;
+}
+
+/* line 3: text ending point (right edge of the h1 content) */
+.text-huge-title .vline--3 {
+    right  : -60px;
+    height : 1400%;
+}
+
+/* line 4: right edge of paragraph */
+.text-huge-title .vline--4 {
+    right : 0;
+}
+
 
 /* ------------------------------------------------------------------- 
  * ## MailtoUI style overrides
@@ -3396,6 +3452,18 @@ img.u-pull-left {
 .s-about {
     padding-top    : var(--vspace-4);
     padding-bottom : var(--vspace-3);
+    position       : relative;
+}
+
+.s-about::before {
+    content          : "";
+    position         : absolute;
+    top              : 125px;
+    left             : 50%;
+    transform        : translateX(-50%);
+    width            : 100vw;
+    height           : 1px;
+    background-color : rgba(255, 255, 255, 0.15);
 }
 
 /* --------------------------------------------------------------------
@@ -3418,6 +3486,7 @@ img.u-pull-left {
     margin-left : -4rem;
 }
 
+
 .about-info__text .text-pretitle {
     margin-bottom : var(--vspace-1);
 }
@@ -3432,13 +3501,37 @@ img.u-pull-left {
  * -------------------------------------------------------------------- */
 .about-expertise {
     padding-top : calc(6 * var(--space));
+    position    : relative;
 }
+
+.about-expertise::before {
+    content          : "";
+    position         : absolute;
+    top              : 0;
+    left             : 50%;
+    transform        : translateX(-50%);
+    width            : 100vw;
+    height           : 1px;
+    background-color : rgba(255, 255, 255, 0.15);
+}
+
 
 .about-expertise .skills-list {
     list-style  : none;
     margin-top  : var(--vspace-1);
     margin-left : 0;
 }
+.about-expertise .skills-list::before {
+    content          : "";
+    position         : absolute;
+    top              : -100px;
+    left             : 50%;
+    transform        : translateX(-50%);
+    width            : 100vw;
+    height           : 1px;
+    background-color : rgba(255, 255, 255, 0.15);
+}
+
 
 .about-expertise .skills-list li {
     display      : inline-block;
@@ -3587,6 +3680,18 @@ img.u-pull-left {
 .s-works {
     padding-top    : var(--vspace-5);
     padding-bottom : var(--vspace-3_5);
+    position       : relative;
+}
+
+.s-works::before {
+    content          : "";
+    position         : absolute;
+    top              : 0;
+    left             : 50%;
+    transform        : translateX(-50%);
+    width            : 100vw;
+    height           : 1px;
+    background-color : rgba(255, 255, 255, 0.15);
 }
 
 .s-works .h1 {
@@ -3851,6 +3956,18 @@ img.u-pull-left {
  * ------------------------------------------------------------------- */
 .testimonials {
     margin-top : var(--vspace-3);
+    position   : relative;
+}
+
+.testimonials::before {
+    content          : "";
+    position         : absolute;
+    top              : 350px;
+    left             : 50%;
+    transform        : translateX(-50%);
+    width            : 100vw;
+    height           : 1px;
+    background-color : rgba(255, 255, 255, 0.15);
 }
 
 .testimonials .swiper-container {
@@ -4039,11 +4156,43 @@ img.u-pull-left {
 
 .contact-top {
     padding-top : var(--vspace-5);
-    border-top  : 1px solid var(--color-border);
+    position    : relative;
+    overflow    : visible;
+}
+
+.contact-top::before {
+    content          : "";
+    position         : absolute;
+    top              : 120px;
+    left             : 50%;
+    transform        : translateX(-50%);
+    width            : 100vw;
+    height           : 1px;
+    background-color : rgba(255, 255, 255, 0.15);
 }
 
 .contact-top .h1 {
     margin-top : 0;
+}
+
+/* vertical lines for get in touch */
+
+.contact-top > .contact-vline {
+    position         : absolute;
+    top              : 120px;
+    bottom           : calc(-1 * var(--vspace-3) - var(--vspace-3) - var(--vspace-3) - var(--vspace-1) - var(--vspace-1));
+    width            : 1px;
+    background-color : rgba(255, 255, 255, 0.15);
+    pointer-events   : none;
+    z-index          : 0;
+}
+
+.contact-top > .contact-vline--left {
+    left : 15px;
+}
+
+.contact-top > .contact-vline--right {
+    right : 15px;
 }
 
 .contact-bottom {
@@ -4109,11 +4258,30 @@ img.u-pull-left {
         margin-left  : 0;
         margin-right : 0;
     }
+    .contact-top > .contact-vline {
+        position         : absolute;
+        top              : 120px;
+        bottom           : calc(-1 * var(--vspace-3) - var(--vspace-3) - var(--vspace-3) - var(--vspace-1) - var(--vspace-4));
+        width            : 1px;
+        background-color : rgba(255, 255, 255, 0.15);
+        pointer-events   : none;
+        z-index          : 0;
+    }
 }
 
 @media screen and (max-width: 800px) {
     .contact-top {
         padding-top : var(--vspace-4);
+    }
+
+    .contact-top > .contact-vline {
+        position         : absolute;
+        top              : 120px;
+        bottom           : calc(-1 * var(--vspace-3) - var(--vspace-3) - var(--vspace-3) - var(--vspace-5) - var(--vspace-5));
+        width            : 1px;
+        background-color : rgba(255, 255, 255, 0.15);
+        pointer-events   : none;
+        z-index          : 0;
     }
 }
 
@@ -4130,6 +4298,18 @@ img.u-pull-left {
     padding-top    : var(--vspace-1);
     padding-bottom : var(--vspace-3);
     color          : var(--color-text-light);
+    position       : relative;
+}
+
+.s-footer::before {
+    content          : "";
+    position         : absolute;
+    top              : 0;
+    left             : 50%;
+    transform        : translateX(-50%);
+    width            : 100vw;
+    height           : 1px;
+    background-color : rgba(255, 255, 255, 0.15);
 }
 
 .s-footer>.row {

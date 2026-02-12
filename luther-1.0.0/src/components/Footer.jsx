@@ -8,7 +8,7 @@ function Footer() {
     <footer className="s-footer">
       <div className="row">
         <div className="column ss-copyright">
-          <span>&copy; Copyright Luther 2021</span>
+          <span>&copy; Copyright Nadun Anjana 2021</span>
           <span>
             Design by{' '}
             <a href="https://www.styleshout.com/">StyleShout</a> Distribution By{' '}

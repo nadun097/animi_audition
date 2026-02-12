@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import AnimatedSection from './AnimatedSection'
 
 const socialLinks = [
   { label: 'Behance', href: '#0' },
@@ -24,7 +23,11 @@ function Intro() {
           <div className="text-pretitle with-line">Hello World</div>
 
           <h1 className="text-huge-title">
-            I am Luther, <br />
+            <span className="vline vline--1"></span>
+            <span className="vline vline--2"></span>
+            <span className="vline vline--3"></span>
+            <span className="vline vline--4"></span>
+            I am Nadun Anjana, <br />
             a digital designer <br />
             &amp; frontend <br />
             developer based <br />

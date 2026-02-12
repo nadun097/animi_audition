@@ -2,6 +2,8 @@ function Contact() {
   return (
     <section id="contact" className="s-contact target-section">
       <div className="row contact-top">
+        <span className="contact-vline contact-vline--left"></span>
+        <span className="contact-vline contact-vline--right"></span>
         <div className="column lg-12">
           <h2 className="text-pretitle">Get In Touch</h2>
           <p className="h1">
@@ -15,7 +17,7 @@ function Contact() {
         <div className="column lg-3 md-5 tab-6 stack-on-550 contact-block">
           <h3 className="text-pretitle">Reach me at</h3>
           <p className="contact-links">
-            <a href="mailto:sayhello@luther.com">sayhello@luther.com</a> <br />
+            <a href="mailto:sayhello@nadunanjana.com">sayhello@nadunanjana.com</a> <br />
             <a href="tel:+1975432345">+197 543 2345</a>
           </p>
         </div>
@@ -41,7 +43,7 @@ function Contact() {
         </div>
         <div className="column lg-4 md-12 contact-block">
           <a
-            href="mailto:sayhello@luther.com"
+            href="mailto:sayhello@nadunanjana.com"
             className="btn btn--medium u-fullwidth contact-btn"
           >
             Say Hello.
