@@ -1,19 +1,21 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 
 function useScrollAnimation(refs) {
+  // Store refs in a stable ref so the effect doesn't re-run on every render
+  const stableRefs = useRef(refs)
+  stableRefs.current = refs
+
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.pageYOffset
+      const scrollY = window.scrollY
 
-      refs.forEach((ref) => {
+      stableRefs.current.forEach((ref) => {
         const current = ref.current
         if (!current) return
 
+        const rect = current.getBoundingClientRect()
         const viewportHeight = window.innerHeight
-        const triggerTop = current.offsetTop + viewportHeight * 0.2 - viewportHeight
-        const blockHeight = current.offsetHeight
-        const blockSpace = triggerTop + blockHeight
-        const inView = scrollY > triggerTop && scrollY <= blockSpace
+        const inView = rect.top < viewportHeight * 0.8 && rect.bottom > 0
         const isAnimated = current.classList.contains('ss-animated')
 
         if (inView && !isAnimated) {
@@ -29,9 +31,11 @@ function useScrollAnimation(refs) {
     }
 
     // Set initial state for animated elements
-    refs.forEach((ref) => {
+    stableRefs.current.forEach((ref) => {
       const current = ref.current
       if (!current) return
+      // Clear previous animation state so re-runs work correctly
+      current.classList.remove('ss-animated')
       const elements = current.querySelectorAll('[data-animate-el]')
       elements.forEach((el) => {
         el.style.opacity = '0'
@@ -44,7 +48,7 @@ function useScrollAnimation(refs) {
     handleScroll()
 
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [refs])
+  }, []) // empty deps — runs once, uses stableRefs for current values
 }
 
 export default useScrollAnimation
