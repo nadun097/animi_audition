@@ -2,45 +2,52 @@ import { useRef } from 'react'
 import useScrollAnimation from '../hooks/useScrollAnimation'
 
 const skills = [
-  'Visual Design',
-  'Branding Identity',
-  'UI Design',
-  'Product Design',
-  'Prototyping',
-  'Illustration',
+  'UI/UX Design',
+  'React Development',
+  'Frontend Development',
+  'Figma & Prototyping',
+  'Mobile Development',
+  'Full Stack Development',
 ]
 
 const experience = [
   {
-    title: 'Dropbox',
-    role: 'Product Designer',
-    timeframe: 'August 2019 - Present',
+    title: 'Meraki United',
+    role: 'Animator & Designer',
+    timeframe: '2023',
     description:
-      'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.',
+      'Created short animation video concepts and scripts. Worked on visual design and animation projects, combining creativity with technical design skills to produce engaging content.',
   },
   {
-    title: 'Microsoft',
-    role: 'Frontend Developer',
-    timeframe: 'August 2016 - July 2019',
+    title: 'Associated Motorways (Pvt) Ltd',
+    role: 'Technical Trainer',
+    timeframe: '2021 - 2023',
     description:
-      'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.',
+      'Served as a technical trainer, delivering hands-on training sessions. Developed training materials and guided teams on technical processes, enhancing operational efficiency and skill development.',
   },
 ]
 
 const education = [
   {
-    title: 'University of Life',
-    role: 'Master in Graphic Design',
-    timeframe: 'April 2015',
+    title: 'National Institute of Business Management (NIBM)',
+    role: 'BSc (Hons) in Computing — Software Engineering',
+    timeframe: '2023 - Present | GPA: 3.81/4.0',
     description:
-      'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.',
+      'Awarded by Coventry University. Specializing in Software Engineering with a focus on UI/UX design, full-stack development, and blockchain technologies. Expected graduation: 2027.',
   },
   {
-    title: 'School of Cool Designers',
-    role: 'B.A. Degree in Graphic Design',
-    timeframe: 'August 2012',
+    title: 'International College of Business and Technology (ICBT)',
+    role: 'Higher National Diploma in Human Resource Management',
+    timeframe: '2021',
     description:
-      'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.',
+      'Awarded by Cardiff Metropolitan University. Gained foundational knowledge in management, organizational behavior, and professional communication skills.',
+  },
+  {
+    title: 'St/Thomas College, Matara',
+    role: 'G.C.E. Advanced Level — Mathematics Stream',
+    timeframe: '2016',
+    description:
+      'Completed Advanced Level studies with a focus on Mathematics, providing a strong analytical and problem-solving foundation.',
   },
 ]
 
@@ -72,9 +79,9 @@ function About() {
       <div className="row about-info wide" data-animate-block ref={aboutInfoRef}>
         <div className="column lg-6 md-12 about-info__pic-block">
           <img
-            src="/images/about-photo.jpg"
-            srcSet="/images/about-photo.jpg 1x, /images/about-photo@2x.jpg 2x"
-            alt=""
+            src="/images/about-photo.svg"
+            srcSet="/images/about-photo.svg 1x, /images/about-photo@2x.svg 2x"
+            alt="Nadun Anjana"
             className="about-info__pic"
             data-animate-el
           />
@@ -86,12 +93,14 @@ function About() {
               About
             </h2>
             <p className="attention-getter" data-animate-el>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur.
+              I am a third-year BSc (Hons) in Computing student specializing in
+              Software Engineering at NIBM, driven by a strong passion for
+              UI/UX design and creating intuitive, user-centered digital
+              experiences. I am particularly interested in designing responsive
+              interfaces, improving usability, and building visually engaging
+              products that solve real user problems. I also have experience in
+              full-stack development with React, Node.js, and mobile development
+              with Kotlin.
             </p>
             <a href="#0" className="btn btn--medium u-fullwidth" data-animate-el>
               Download CV

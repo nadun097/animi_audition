@@ -29,6 +29,9 @@ function App() {
         <span></span>
         <span></span>
         <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
 
       <Header />

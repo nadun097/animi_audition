@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react'
 
 const socialLinks = [
-  { label: 'Behance', href: '#0' },
-  { label: 'Twitter', href: '#0' },
-  { label: 'Dribbble', href: '#0' },
-  { label: 'Instagram', href: '#0' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/nadun-anjana' },
+  { label: 'GitHub', href: 'https://github.com/nadun097' },
+  { label: 'Instagram', href: 'https://www.instagram.com/kn_anjana_._/' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@animiaudition' },
 ]
 
 function Intro() {
@@ -27,11 +27,11 @@ function Intro() {
             <span className="vline vline--2"></span>
             <span className="vline vline--3"></span>
             <span className="vline vline--4"></span>
-            I am Nadun Anjana, <br />
-            a digital designer <br />
-            &amp; frontend <br />
-            developer based <br />
-            in Somewhere.
+            I am <span className="name-glow">Nadun Anjana</span>, <br />
+            a Designer <br />
+            &amp; Software <br />
+            Engineering Student <br />
+            based in Sri Lanka.
           </h1>
         </div>
 
