@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailJS Setup for CV Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .step {
+            background: #f5f5f5;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #007acc;
+        }
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        .warning {
+            background: #fed7d7;
+            border: 1px solid #e53e3e;
+            color: #c53030;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>EmailJS Setup for CV Verification</h1>
+
+    <div class="warning">
+        <strong>Security Note:</strong> Never use Gmail credentials directly in frontend code. EmailJS provides a secure way to send emails from your portfolio.
+    </div>
+
+    <h2>Step 1: Create EmailJS Account</h2>
+    <ol>
+        <li>Go to <a href="https://www.emailjs.com/" target="_blank">https://www.emailjs.com/</a></li>
+        <li>Sign up for a free account</li>
+        <li>Verify your email address</li>
+    </ol>
+
+    <h2>Step 2: Set up Email Service</h2>
+    <div class="step">
+        <h3>Add Email Service:</h3>
+        <ol>
+            <li>Go to Email Services in your dashboard</li>
+            <li>Click "Add New Service"</li>
+            <li>Choose "Gmail" as the provider</li>
+            <li>Connect your Gmail account (use the credentials provided)</li>
+            <li>Note down the Service ID (it will look like "service_xxxxx")</li>
+        </ol>
+    </div>
+
+    <h2>Step 3: Create Email Template</h2>
+    <div class="step">
+        <h3>Email Template Setup:</h3>
+        <ol>
+            <li>Go to Email Templates</li>
+            <li>Click "Create New Template"</li>
+            <li>Use this template content:</li>
+        </ol>
+
+        <h4>Subject:</h4>
+        <div class="code">Your CV Download Verification Code - Portfolio</div>
+
+        <h4>To Email:</h4>
+        <div class="code">{{to_email}}</div>
+
+        <h4>HTML Content:</h4>
+        <div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;style&gt;
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; text-align: center; border-radius: 8px 8px 0 0; }
+        .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 8px 8px; }
+        .code { font-size: 32px; font-weight: bold; color: #667eea; text-align: center; letter-spacing: 5px; background: white; padding: 20px; border-radius: 8px; margin: 20px 0; border: 2px dashed #667eea; }
+        .footer { text-align: center; color: #666; font-size: 12px; margin-top: 20px; }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="header"&gt;
+            &lt;h1&gt;CV Download Verification&lt;/h1&gt;
+        &lt;/div&gt;
+        &lt;div class="content"&gt;
+            &lt;p&gt;Hello {{to_name}},&lt;/p&gt;
+            &lt;p&gt;Thank you for your interest in downloading my CV from my portfolio.&lt;/p&gt;
+            &lt;p&gt;Your verification code is:&lt;/p&gt;
+            &lt;div class="code"&gt;{{verification_code}}&lt;/div&gt;
+            &lt;p&gt;Please enter this code in the verification form to complete your CV download.&lt;/p&gt;
+            &lt;p&gt;This code will expire in 10 minutes for security reasons.&lt;/p&gt;
+            &lt;p&gt;Best regards,&lt;br&gt;Nadun Anjana&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="footer"&gt;
+            &lt;p&gt;This is an automated message from my portfolio website.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </div>
+
+        <p>Save the template and note down the Template ID (it will look like "template_xxxxx")</p>
+    </div>
+
+    <h2>Step 4: Get Your Public Key</h2>
+    <div class="step">
+        <ol>
+            <li>Go to Account → General</li>
+            <li>Copy your Public Key (it will look like a long string)</li>
+        </ol>
+    </div>
+
+    <h2>Step 5: Update the Code</h2>
+    <div class="step">
+        <p>Update the <code>CVVerificationModal.jsx</code> file with your EmailJS credentials:</p>
+        <div class="code">
+// Replace these values with your EmailJS credentials
+const serviceId = 'your_service_id_here'
+const templateId = 'your_template_id_here'
+const publicKey = 'your_public_key_here'
+        </div>
+    </div>
+
+    <h2>Step 6: Install EmailJS</h2>
+    <div class="step">
+        <p>Install EmailJS in your project:</p>
+        <div class="code">npm install @emailjs/browser</div>
+
+        <p>Or if using yarn:</p>
+        <div class="code">yarn add @emailjs/browser</div>
+    </div>
+
+    <h2>Step 7: Update the Modal Code</h2>
+    <div class="step">
+        <p>Replace the email sending function in <code>CVVerificationModal.jsx</code> with:</p>
+        <div class="code">
+import emailjs from '@emailjs/browser'
+
+// ... existing code ...
+
+const sendVerificationEmail = async (email, code) => {
+  const templateParams = {
+    to_email: email,
+    verification_code: code,
+    to_name: 'Portfolio Visitor'
+  }
+
+  try {
+    const result = await emailjs.send(
+      serviceId,
+      templateId,
+      templateParams,
+      publicKey
+    )
+    return result.text === 'OK'
+  } catch (error) {
+    console.error('Email sending failed:', error)
+    return false
+  }
+}
+        </div>
+    </div>
+
+    <h2>Testing</h2>
+    <div class="step">
+        <p>After setup, test the verification system:</p>
+        <ol>
+            <li>Run your portfolio locally</li>
+            <li>Click "Download CV"</li>
+            <li>Enter your email and submit</li>
+            <li>Check your email for the verification code</li>
+            <li>Enter the code to download the CV</li>
+        </ol>
+    </div>
+
+    <div class="warning">
+        <strong>Important:</strong> The current implementation includes a fallback alert showing the verification code for testing purposes. Remove this in production by deleting the alert line in the catch block.
+    </div>
+</body>
+</html>
