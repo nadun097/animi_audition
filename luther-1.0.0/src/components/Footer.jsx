@@ -8,11 +8,11 @@ function Footer() {
     <footer className="s-footer">
       <div className="row">
         <div className="column ss-copyright">
-          <span>&copy; Copyright Nadun Anjana 2025</span>
+          <span>&copy; Copyright CORSZERO 2026</span>
           <span>
             Design by{' '}
-            <a href="https://www.styleshout.com/">StyleShout</a> Distribution By{' '}
-            <a href="https://themewagon.com">Themewagon</a>
+            <a href="https://instagram.com/knanjana">KN Anjana</a> Distribution By{' '}
+            <a href="https://www.youtube.com/@animiaudition">ANIMI AUDITION</a>
           </span>
         </div>
 
