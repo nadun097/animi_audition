@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formspree Setup for CV Verification</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .step {
+            background: #f8f9fa;
+            border-left: 4px solid #007bff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .code {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 10px 0;
+        }
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+        .form-preview {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🚀 Formspree Setup for CV Verification</h1>
+        <p>Free email service setup for your portfolio's CV download verification</p>
+    </div>
+
+    <div class="step">
+        <h3>Step 1: Create a Formspree Account</h3>
+        <ol>
+            <li>Go to <a href="https://formspree.io" target="_blank">formspree.io</a></li>
+            <li>Click "Sign Up" and create a free account</li>
+            <li>Verify your email address</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>Step 2: Create a New Form</h3>
+        <ol>
+            <li>After logging in, click "Create a new form"</li>
+            <li>Name your form: "CV Verification"</li>
+            <li>Set the form to redirect to your portfolio URL after submission</li>
+            <li>Copy the form endpoint URL (it will look like: <code>https://formspree.io/f/xxxxx</code>)</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>Step 3: Configure Email Notifications</h3>
+        <ol>
+            <li>In your Formspree dashboard, go to your form settings</li>
+            <li>Under "Notifications", add your email address to receive submissions</li>
+            <li>Enable email notifications for new submissions</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h3>Step 4: Update Your Code</h3>
+        <p>Replace the placeholder in your <code>CVVerificationModal.jsx</code> file:</p>
+
+        <div class="code">
+// In CVVerificationModal.jsx, find this line:
+const formspreeEndpoint = 'https://formspree.io/f/your_form_id'
+
+// Replace with your actual Formspree form ID:
+const formspreeEndpoint = 'https://formspree.io/f/abc123def' // Your actual form ID
+        </div>
+    </div>
+
+    <div class="form-preview">
+        <h3>📧 Email Template Preview</h3>
+        <p>When someone requests a verification code, they'll receive an email like this:</p>
+
+        <div style="border: 1px solid #ddd; padding: 20px; background: white; border-radius: 8px;">
+            <h4>Subject: Your CV Download Verification Code</h4>
+            <p><strong>From:</strong> Your Portfolio via Formspree</p>
+            <p><strong>To:</strong> visitor@example.com</p>
+            <hr>
+            <p>Your verification code is: <strong>123456</strong></p>
+            <p>This code will expire in 10 minutes.</p>
+            <p>If you didn't request this, please ignore this email.</p>
+        </div>
+    </div>
+
+    <div class="warning">
+        <strong>⚠️ Important Notes:</strong>
+        <ul>
+            <li>Formspree's free plan allows 50 submissions per month</li>
+            <li>Emails are sent from a Formspree address (not your domain)</li>
+            <li>Consider upgrading to a paid plan for higher limits and custom sending domains</li>
+            <li>Test the form thoroughly before going live</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h3>Step 5: Test Your Setup</h3>
+        <ol>
+            <li>Save your changes and restart your development server</li>
+            <li>Go to your portfolio and click "Download CV"</li>
+            <li>Enter your email address and submit</li>
+            <li>Check your email for the verification code</li>
+            <li>Enter the code to download the CV</li>
+        </ol>
+    </div>
+
+    <div class="success">
+        <strong>✅ Setup Complete!</strong>
+        <p>Your portfolio now has a working email verification system using Formspree's free service. The verification codes will be sent directly to users' email addresses, and you'll receive notifications for each submission.</p>
+    </div>
+
+    <div class="step">
+        <h3>Alternative: EmailJS Setup (If you prefer)</h3>
+        <p>If you prefer more control over email templates and don't mind the setup complexity, you can also use EmailJS. Check the <code>emailjs-setup.html</code> file in your project for EmailJS instructions.</p>
+    </div>
+
+    <script>
+        // Test function to verify Formspree setup
+        async function testFormspree(formId) {
+            const testData = new FormData();
+            testData.append('email', 'test@example.com');
+            testData.append('verification_code', '123456');
+            testData.append('subject', 'Test Verification Code');
+            testData.append('message', 'This is a test email from your portfolio setup.');
+
+            try {
+                const response = await fetch(`https://formspree.io/f/${formId}`, {
+                    method: 'POST',
+                    body: testData,
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    alert('✅ Formspree test successful! Check your email.');
+                } else {
+                    alert('❌ Formspree test failed. Check your form ID.');
+                }
+            } catch (error) {
+                alert('❌ Error testing Formspree: ' + error.message);
+            }
+        }
+
+        // Add test button if on localhost
+        if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+            const testButton = document.createElement('button');
+            testButton.textContent = 'Test Formspree Setup';
+            testButton.style.cssText = 'background:#007bff;color:white;border:none;padding:10px 20px;border-radius:4px;cursor:pointer;margin:20px 0;';
+            testButton.onclick = () => {
+                const formId = prompt('Enter your Formspree form ID (the part after /f/):');
+                if (formId) testFormspree(formId);
+            };
+            document.querySelector('.success').appendChild(testButton);
+        }
+    </script>
+</body>
+</html>

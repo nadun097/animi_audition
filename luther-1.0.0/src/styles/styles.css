@@ -4589,3 +4589,262 @@ img.u-pull-left {
         right : 6vw;
     }
 }
+
+/* ===================================================================
+/* ===================================================================
+ * CV Verification Modal
+ * ------------------------------------------------------------------ */
+.cv-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: modalFadeIn 0.3s ease;
+    padding: 0.6rem; /* reduced to bring modal closer to viewport edges */
+}
+
+.cv-modal {
+    background: var(--color-gray-10);
+    border-radius: 0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    max-width: 640px;
+    width: 100%;
+    max-height: calc(100vh - 32px); /* ensure modal fits tightly in viewport */
+    animation: modalSlideIn 0.35s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 3px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+}
+
+.cv-modal-header {
+    padding: 1.6rem 2rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cv-modal-header h3 {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: var(--text-md);
+    font-weight: 600;
+    font-family: var(--font-2);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.cv-modal-body {
+    padding: 1.4rem 2rem 0.8rem; /* reduced bottom space */
+    color: var(--color-text);
+}
+
+.cv-modal-desc {
+    margin: 5px 0 0.8rem 0; /* 5px top, reduced bottom */
+    font-size: calc(var(--text-sm) * 1.2); /* increased 1.2x */
+    font-weight: 400;
+    color: var(--color-text-light);
+    line-height: 1.5;
+}
+
+.cv-modal-body p strong {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.cv-security-notice {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 2px solid rgba(255, 255, 255, 0.12);
+    color: var(--color-text-light);
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.62rem; /* increased 1.2x */
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.cv-security-notice small {
+    color: var(--color-text-light);
+}
+
+.cv-form-group {
+    margin-bottom: 1rem;
+}
+
+.cv-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-text-dark);
+    font-family: var(--font-1);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.cv-input:focus {
+    border-color: rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.cv-input::placeholder {
+    color: var(--color-text-light);
+    opacity: 0.5;
+}
+
+.cv-code-boxes {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.cv-code-box {
+    width: 3rem;
+    height: 3.2rem;
+    text-align: center;
+    font-size: var(--text-lg);
+    font-weight: 600;
+    font-family: var(--font-1);
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 0;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-text-dark);
+    outline: none;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.cv-code-box:focus {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.cv-error {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-xs);
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+.cv-modal-actions {
+    display: flex;
+    gap: 0.8rem;
+    justify-content: flex-end;
+    margin-top: 0.6rem; /* tightened spacing */
+}
+
+.cv-btn-cancel {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--color-text-light);
+    padding: 0.6rem 1.4rem;
+    font-size: var(--text-xs);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-radius: 0;
+    font-family: var(--font-1);
+}
+
+.cv-btn-cancel:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cv-btn-primary {
+    background: var(--color-1-dark);
+    border: none;
+    color: var(--color-gray-10);
+    padding: 0.6rem 1.6rem;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    border-radius: 0;
+    font-family: var(--font-1);
+}
+
+.cv-btn-primary:hover {
+    background: var(--color-1-darker);
+}
+
+.cv-btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.cv-resend-notice {
+    text-align: center;
+    margin-bottom: 0;
+    padding: 0.5rem 0;
+}
+
+.cv-resend-notice small {
+    color: var(--color-text-light);
+    font-size: var(--text-xs);
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .cv-modal-overlay {
+        padding: 1rem;
+    }
+
+    .cv-modal {
+        max-width: 100%;
+    }
+
+    .cv-modal-header {
+        padding: 1.2rem 1.4rem 0.8rem;
+    }
+
+    .cv-modal-body {
+        padding: 1.2rem 1.4rem 1.4rem;
+    }
+
+    .cv-modal-actions {
+        flex-direction: column;
+    }
+
+    .cv-modal-actions .cv-btn-cancel,
+    .cv-modal-actions .cv-btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+}

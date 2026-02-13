@@ -1,5 +1,6 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import useScrollAnimation from '../hooks/useScrollAnimation'
+import CVVerificationModal from './CVVerificationModal'
 
 const skills = [
   'UI/UX Design',
@@ -31,7 +32,7 @@ const education = [
   {
     title: 'National Institute of Business Management (NIBM)',
     role: 'BSc (Hons) in Computing — Software Engineering',
-    timeframe: '2023 - Present | GPA: 3.81/4.0',
+    timeframe: '2023 - Present',
     description:
       'Awarded by Coventry University. Specializing in Software Engineering with a focus on UI/UX design, full-stack development, and blockchain technologies. Expected graduation: 2027.',
   },
@@ -72,7 +73,23 @@ function About() {
   const expertiseRef = useRef(null)
   const timelinesRef = useRef(null)
 
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   useScrollAnimation([aboutInfoRef, expertiseRef, timelinesRef])
+
+  const handleDownloadClick = () => {
+    setIsModalOpen(true)
+  }
+
+  const handleVerificationComplete = () => {
+    // Create a temporary link to download the CV
+    const link = document.createElement('a')
+    link.href = '/Nadun-Anjana-CV-ATS.pdf'
+    link.download = 'Nadun-Anjana-CV-ATS.pdf'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   return (
     <section id="about" className="s-about target-section">
@@ -102,9 +119,9 @@ function About() {
               full-stack development with React, Node.js, and mobile development
               with Kotlin.
             </p>
-            <a href="#0" className="btn btn--medium u-fullwidth" data-animate-el>
+            <button onClick={handleDownloadClick} className="btn btn--medium u-fullwidth" data-animate-el>
               Download CV
-            </a>
+            </button>
           </div>
         </div>
       </div>
@@ -145,6 +162,12 @@ function About() {
           </div>
         </div>
       </div>
+
+      <CVVerificationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onVerified={handleVerificationComplete}
+      />
     </section>
   )
 }
