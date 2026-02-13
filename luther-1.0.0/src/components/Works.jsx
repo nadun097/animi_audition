@@ -99,6 +99,82 @@ const portfolioItems = [
     categories: ['Animation', 'Content Creation', 'Design'],
     link: 'https://www.youtube.com/@animiaudition',
   },
+  {
+    id: 'modal-07',
+    img: '/images/portfolio/fuji.jpg',
+    imgSet: '/images/portfolio/fuji.jpg 1x, /images/portfolio/fuji@2x.jpg 2x',
+    cat: 'Video',
+    title: 'Video creation',
+    galleryImg: '/images/portfolio/gallery/g-fuji.jpg',
+    description:
+      'Short-form video production and animation. Scriptwriting, storyboarding, animation, and post-production edits.',
+    categories: ['Animation', 'Editing', 'Storyboarding'],
+    link: 'https://www.youtube.com/@animiaudition',
+  },
+  {
+    id: 'modal-08',
+    img: '/images/portfolio/lamp.jpg',
+    imgSet: '/images/portfolio/lamp.jpg 1x, /images/portfolio/lamp@2x.jpg 2x',
+    cat: 'Video',
+    title: 'Video creation',
+    galleryImg: '/images/portfolio/gallery/g-lamp.jpg',
+    description:
+      'Concept-driven motion pieces focused on visual storytelling and pacing for social platforms.',
+    categories: ['Motion Design', 'After Effects', 'Sound Design'],
+    link: 'https://www.youtube.com/@animiaudition',
+  },
+  {
+    id: 'modal-09',
+    img: '/images/portfolio/rucksack.jpg',
+    imgSet:
+      '/images/portfolio/rucksack.jpg 1x, /images/portfolio/rucksack@2x.jpg 2x',
+    cat: 'Video',
+    title: 'Video creation',
+    galleryImg: '/images/portfolio/gallery/g-rucksack.jpg',
+    description:
+      'Educational animation series and explainer videos with emphasis on clarity and branding.',
+    categories: ['2D Animation', 'Illustration', 'Editing'],
+    link: 'https://www.youtube.com/@animiaudition',
+  },
+  {
+    id: 'modal-10',
+    img: '/images/portfolio/skaterboy.jpg',
+    imgSet:
+      '/images/portfolio/skaterboy.jpg 1x, /images/portfolio/skaterboy@2x.jpg 2x',
+    cat: 'Video',
+    title: 'Video creation',
+    galleryImg: '/images/portfolio/gallery/g-skaterboy.jpg',
+    description:
+      'Creative short films and promotional videos combining live-action elements with motion graphics.',
+    categories: ['Compositing', 'Motion Graphics', 'Color Grading'],
+    link: 'https://www.youtube.com/@animiaudition',
+  },
+  {
+    id: 'modal-11',
+    img: '/images/portfolio/sanddunes.jpg',
+    imgSet:
+      '/images/portfolio/sanddunes.jpg 1x, /images/portfolio/sanddunes@2x.jpg 2x',
+    cat: 'Video',
+    title: 'Video creation',
+    galleryImg: '/images/portfolio/gallery/g-sanddunes.jpg',
+    description:
+      'Documentary-style editing and motion sequences for portfolio showcases.',
+    categories: ['Editing', 'Cinematography', 'Sound Design'],
+    link: 'https://www.youtube.com/@animiaudition',
+  },
+  {
+    id: 'modal-12',
+    img: '/images/portfolio/minimalismo.jpg',
+    imgSet:
+      '/images/portfolio/minimalismo.jpg 1x, /images/portfolio/minimalismo@2x.jpg 2x',
+    cat: 'Video',
+    title: 'Video creation',
+    galleryImg: '/images/portfolio/gallery/g-minimalismo.jpg',
+    description:
+      'Promo videos, intros and short animations tailored for branding and social media.',
+    categories: ['Animation', 'Branding', 'Social Media'],
+    link: 'https://www.youtube.com/@animiaudition',
+  },
 ]
 
 const testimonials = [
@@ -159,6 +235,9 @@ function Works() {
     }
   }
 
+  const academicItems = portfolioItems.slice(0, 6)
+  const videoItems = portfolioItems.slice(6)
+
   return (
     <section id="works" className="s-works target-section">
       <div className="row works-portfolio">
@@ -171,8 +250,40 @@ function Works() {
             to check them out.
           </p>
 
+          <h3 className="text-pretitle" data-animate-el>Academic Projects</h3>
           <ul className="folio-list row block-lg-one-half block-stack-on-1000">
-            {portfolioItems.map((item) => (
+            {academicItems.map((item) => (
+              <li
+                key={item.id}
+                className="folio-list__item column"
+                data-animate-el
+              >
+                <a
+                  className="folio-list__item-link"
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault()
+                    setActiveModal(item)
+                  }}
+                >
+                  <div className="folio-list__item-pic">
+                    <img src={item.img} srcSet={item.imgSet} alt="" />
+                  </div>
+                  <div className="folio-list__item-text">
+                    <div className="folio-list__item-cat">{item.cat}</div>
+                    <div className="folio-list__item-title">{item.title}</div>
+                  </div>
+                </a>
+                <a className="folio-list__proj-link" href="#" title="project link">
+                  <ArrowIcon />
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="text-pretitle" data-animate-el>Video creation</h3>
+          <ul className="folio-list row block-lg-one-half block-stack-on-1000">
+            {videoItems.map((item) => (
               <li
                 key={item.id}
                 className="folio-list__item column"

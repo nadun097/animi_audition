@@ -3854,6 +3854,12 @@ img.u-pull-left {
     position       : relative;
 }
 
+/* Reduce bottom spacing for titles in the Works section and add 20px top spacing */
+.s-works .text-pretitle {
+    margin-top: 20px; /* explicit top spacing requested */
+    margin-bottom: 8px; /* reduced bottom space */
+}
+
 .s-works::before {
     content          : "";
     position         : absolute;
