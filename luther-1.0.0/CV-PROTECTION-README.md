@@ -8,7 +8,7 @@ This portfolio includes a comprehensive email verification system for CV downloa
 ### 🔐 **Multi-Layer Protection**
 - **Email Verification**: 6-digit codes sent via Formspree (free email service)
 - **Rate Limiting**: Prevents brute force attacks
-- **Code Expiration**: 10-minute expiry for security
+- **Code Expiration**: 3-minute expiry for security
 - **Session Management**: Secure state storage
 - **Input Validation**: Comprehensive email and code validation
 - **Security Logging**: Tracks all security events
@@ -48,7 +48,7 @@ The security settings can be adjusted in `src/utils/cvSecurity.js`:
 
 ```javascript
 const SECURITY_CONFIG = {
-  VERIFICATION_CODE_EXPIRY: 10 * 60 * 1000, // 10 minutes
+  VERIFICATION_CODE_EXPIRY: 3 * 60 * 1000, // 3 minutes
   MAX_ATTEMPTS_PER_SESSION: 8,               // Max attempts per session
   SESSION_TIMEOUT: 24 * 60 * 60 * 1000,      // 24 hour session timeout
 }
@@ -65,7 +65,7 @@ const SECURITY_CONFIG = {
 ### Security Checks
 - ✅ Email format validation
 - ✅ Rate limiting per session
-- ✅ Code expiration (10 minutes)
+- ✅ Code expiration (3 minutes)
 - ✅ Secure code generation (crypto API)
 - ✅ Input sanitization
 - ✅ Session integrity checks

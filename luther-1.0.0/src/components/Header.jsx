@@ -43,6 +43,12 @@ function Header() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  // keep <body> in sync with menu state so CSS (.menu-is-open .main-nav) works
+  useEffect(() => {
+    document.body.classList.toggle('menu-is-open', menuOpen)
+    return () => document.body.classList.remove('menu-is-open')
+  }, [menuOpen])
+
   const handleNavClick = (e, href) => {
     e.preventDefault()
     const target = document.querySelector(href)
@@ -63,6 +69,8 @@ function Header() {
         <a
           className={`mobile-menu-toggle ${menuOpen ? 'is-clicked' : ''}`}
           href="#0"
+          aria-expanded={menuOpen}
+          aria-controls="main-nav"
           onClick={(e) => {
             e.preventDefault()
             setMenuOpen(!menuOpen)
@@ -73,7 +81,7 @@ function Header() {
       </div>
 
       <div className="row wide main-nav-wrap">
-        <nav className="column lg-12 main-nav">
+        <nav id="main-nav" className="column lg-12 main-nav">
           <ul>
             <li>
               <a href="/" className="home-link">
