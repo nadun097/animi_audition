@@ -2,7 +2,7 @@
 // Provides secure route protection for CV download functionality
 
 const SECURITY_CONFIG = {
-  VERIFICATION_CODE_EXPIRY: 10 * 60 * 1000, // 10 minutes
+  VERIFICATION_CODE_EXPIRY: 3 * 60 * 1000, // 3 minutes
   MAX_ATTEMPTS_PER_SESSION: 8,
   SESSION_TIMEOUT: 24 * 60 * 60 * 1000, // 24 hours
 }

@@ -99,15 +99,16 @@ const CVVerificationModal = ({ isOpen, onClose, onVerified }) => {
     try {
       const code = await cvSecurity.generateSecureCode()
 
-      // Send via Formspree — emails both the verification code
-      // and notifies the owner about the download request
+      // Send via Formspree — send ONLY the verification code in the email body
+      // (owner notification fields kept minimal). The 'message' body will contain
+      // the 6-digit code only to satisfy the requirement.
       await sendToFormspree({
         email: OWNER_EMAIL,
         _replyto: email,
-        subject: `CV Download Request from ${email}`,
+        subject: `Your CV verification code`,
         verification_code: code,
-        downloader_email: email,
-        message: `Verification code: ${code}\n\nCV download requested by: ${email}`,
+        // message MUST contain only the code (plain text)
+        message: `${code}`,
       })
 
       const expiry = Date.now() + cvSecurity.config.VERIFICATION_CODE_EXPIRY
