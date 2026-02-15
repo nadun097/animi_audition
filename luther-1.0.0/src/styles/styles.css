@@ -1,7 +1,7 @@
 /* =================================================================== 
  * Nadun Anjana Main Stylesheet
  * Template Ver. 1.0.0
- * 02-15-2021
+ * 02-01-2026
  * ------------------------------------------------------------------
  *
  * TOC:
@@ -4853,4 +4853,43 @@ img.u-pull-left {
         width: 100%;
         text-align: center;
     }
+}
+
+/* ------------------------------------------------------------------
+ * Custom stylish cursor (desktop only)
+ * - single small dot that follows the pointer
+ * - hover expands dot by 20%
+ * - hides on touch devices and restores native cursor for form controls
+ * ------------------------------------------------------------------ */
+.custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: translate3d(-50%, -50%, 0);
+    z-index: 9999;
+    mix-blend-mode: difference;
+    opacity: 0;
+
+    /* increased base size: +20% */
+    width: 10px;
+    height: 10px;
+    background: var(--color-white);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(255,255,255,0.02);
+}
+
+.custom-cursor-dot.is-hovered {
+    transform: translate3d(-50%, -50%, 0) scale(1.2);
+    background: var(--color-1);
+}
+
+/* hide native cursor and use custom; restore for inputs/links */
+body { cursor: none; }
+input, textarea, select, button, a, .no-custom-cursor { cursor: auto; }
+
+/* disable for touch devices */
+@media (hover: none), (pointer: coarse) {
+    .custom-cursor-dot { display: none !important; }
+    body { cursor: auto; }
 }

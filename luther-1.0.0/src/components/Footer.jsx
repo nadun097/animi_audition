@@ -11,8 +11,7 @@ function Footer() {
           <span>&copy; Copyright CORSZERO 2026</span>
           <span>
             Design by{' '}
-            <a href="https://instagram.com/knanjana">KN Anjana</a> Distribution By{' '}
-            <a href="https://www.youtube.com/@animiaudition">ANIMI AUDITION</a>
+            <a href="https://instagram.com/knanjana">KN Anjana</a>
           </span>
         </div>
 
