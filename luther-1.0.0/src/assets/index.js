@@ -26,18 +26,18 @@ import user07 from './avatars/user-07.jpg';
 import user08 from './avatars/user-08.jpg';
 
 // --- Portfolio thumbnails ---
-import fuji from './portfolio/fuji.jpg';
-import fuji2x from './portfolio/fuji@2x.jpg';
-import lamp from './portfolio/lamp.jpg';
-import lamp2x from './portfolio/lamp@2x.jpg';
-import minimalismo from './portfolio/minimalismo.jpg';
-import minimalismo2x from './portfolio/minimalismo@2x.jpg';
-import rucksack from './portfolio/rucksack.jpg';
-import rucksack2x from './portfolio/rucksack@2x.jpg';
-import sanddunes from './portfolio/sanddunes.jpg';
-import sanddunes2x from './portfolio/sanddunes@2x.jpg';
-import skaterboy from './portfolio/skaterboy.jpg';
-import skaterboy2x from './portfolio/skaterboy@2x.jpg';
+import codedript from './portfolio/codedript.jpg';
+import f1AutoCare from './portfolio/f1-auto-care.jpg';
+import pixora from './portfolio/pixora.jpg';
+import roborover from './portfolio/roborover.jpg';
+import trashcaseApp from './portfolio/trashcase app.jpg';
+
+// --- Portfolio thumbnails 2x ---
+import codedript2x from './portfolio/codedript2x.jpg';
+import f1AutoCare2x from './portfolio/f1-auto-care2x.jpg';
+import pixora2x from './portfolio/pixora2x.jpg';
+import roborover2x from './portfolio/roborover2x.jpg';
+import trashcaseApp2x from './portfolio/trashcase app2x.jpg';
 
 // --- Portfolio gallery ---
 import gFuji from './portfolio/gallery/g-fuji.jpg';
@@ -75,18 +75,18 @@ export {
   user08,
 
   // Portfolio thumbnails
-  fuji,
-  fuji2x,
-  lamp,
-  lamp2x,
-  minimalismo,
-  minimalismo2x,
-  rucksack,
-  rucksack2x,
-  sanddunes,
-  sanddunes2x,
-  skaterboy,
-  skaterboy2x,
+  codedript,
+  f1AutoCare,
+  pixora,
+  roborover,
+  trashcaseApp,
+
+  // Portfolio thumbnails 2x
+  codedript2x,
+  f1AutoCare2x,
+  pixora2x,
+  roborover2x,
+  trashcaseApp2x,
 
   // Portfolio gallery
   gFuji,

@@ -33,9 +33,6 @@ function Contact() {
             <li>
               <a href="https://www.instagram.com/kn_anjana_._/">Instagram</a>
             </li>
-            <li>
-              <a href="https://www.youtube.com/@animiaudition">YouTube</a>
-            </li>
           </ul>
         </div>
         <div className="column lg-4 md-12 contact-block">

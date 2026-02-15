@@ -4,6 +4,8 @@ import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import useScrollAnimation from '../hooks/useScrollAnimation'
+import {codedript2x, f1AutoCare2x, pixora2x, roborover2x, trashcaseApp2x, codedript, f1AutoCare, pixora, roborover, trashcaseApp, gFuji, gLamp, gMinimalismo, gRucksack, gSanddunes, gSkaterboy } from '../assets'
+
 
 const ArrowIcon = () => (
   <svg
@@ -25,11 +27,11 @@ const ArrowIcon = () => (
 const portfolioItems = [
   {
     id: 'modal-01',
-    img: '/images/portfolio/fuji.jpg',
-    imgSet: '/images/portfolio/fuji.jpg 1x, /images/portfolio/fuji@2x.jpg 2x',
+    img: pixora,
+    imgSet: `${pixora} 1x`,
     cat: 'Full Stack',
     title: 'Pixora',
-    galleryImg: '/images/portfolio/gallery/g-fuji.jpg',
+    galleryImg: pixora2x,
     description:
       'A blockchain-based digital art marketplace. Implemented frontend using React and TypeScript, integrated smart contracts using Solidity.',
     categories: ['React', 'TypeScript', 'Solidity', 'Vite'],
@@ -37,11 +39,11 @@ const portfolioItems = [
   },
   {
     id: 'modal-02',
-    img: '/images/portfolio/lamp.jpg',
-    imgSet: '/images/portfolio/lamp.jpg 1x, /images/portfolio/lamp@2x.jpg 2x',
+    img: trashcaseApp,
+    imgSet: `${trashcaseApp} 1x`,
     cat: 'Mobile App',
     title: 'Crash-Trace',
-    galleryImg: '/images/portfolio/gallery/g-lamp.jpg',
+    galleryImg: trashcaseApp2x,
     description:
       'A vehicle accident news and verification mobile application. Users can search vehicle numbers and identify past accident records including location, damage percentage, and involved vehicles. Built with MVVM and Jetpack Compose.',
     categories: ['Kotlin', 'Jetpack Compose', 'Firebase', 'Supabase'],
@@ -49,12 +51,11 @@ const portfolioItems = [
   },
   {
     id: 'modal-03',
-    img: '/images/portfolio/rucksack.jpg',
-    imgSet:
-      '/images/portfolio/rucksack.jpg 1x, /images/portfolio/rucksack@2x.jpg 2x',
+    img: roborover,
+    imgSet: `${roborover} 1x`,
     cat: 'Web Platform',
     title: 'RoboRover',
-    galleryImg: '/images/portfolio/gallery/g-rucksack.jpg',
+    galleryImg: roborover2x,
     description:
       'Official event website and race management system for the NIBM RoboRover challenge, including registration, session booking, real-time race timing, and a live leaderboard. Deployed with CI/CD on AWS Lightsail + Render.',
     categories: ['React', 'Express.js', 'MongoDB', 'Flutter', 'AWS'],
@@ -62,12 +63,11 @@ const portfolioItems = [
   },
   {
     id: 'modal-04',
-    img: '/images/portfolio/skaterboy.jpg',
-    imgSet:
-      '/images/portfolio/skaterboy.jpg 1x, /images/portfolio/skaterboy@2x.jpg 2x',
+    img: codedript,
+    imgSet: `${codedript} 1x`,
     cat: 'Blockchain',
     title: 'CodeDript',
-    galleryImg: '/images/portfolio/gallery/g-skaterboy.jpg',
+    galleryImg: codedript2x,
     description:
       'A decentralized agreement management platform enabling secure contracts between clients and developers. Features MetaMask authentication, Ethereum transactions via ethers.js, real-time milestone tracking, and decentralized document storage using IPFS.',
     categories: ['React', 'TypeScript', 'Solidity', 'Node.js', 'Docker'],
@@ -75,105 +75,15 @@ const portfolioItems = [
   },
   {
     id: 'modal-05',
-    img: '/images/portfolio/sanddunes.jpg',
-    imgSet:
-      '/images/portfolio/sanddunes.jpg 1x, /images/portfolio/sanddunes@2x.jpg 2x',
+    img: f1AutoCare,
+    imgSet: `${f1AutoCare} 1x`,
     cat: 'Desktop App',
     title: 'Fact One Auto Care',
-    galleryImg: '/images/portfolio/gallery/g-sanddunes.jpg',
+    galleryImg: f1AutoCare2x,
     description:
       'A desktop-based vehicle scheduling and route management system. Implemented MVC architecture with database integration for efficient vehicle service management.',
     categories: ['Java', 'JavaFX', 'MVC', 'MySQL'],
     link: 'https://github.com/nadun097',
-  },
-  {
-    id: 'modal-06',
-    img: '/images/portfolio/minimalismo.jpg',
-    imgSet:
-      '/images/portfolio/minimalismo.jpg 1x, /images/portfolio/minimalismo@2x.jpg 2x',
-    cat: 'Content',
-    title: 'Animi Audition',
-    galleryImg: '/images/portfolio/gallery/g-minimalismo.jpg',
-    description:
-      'YouTube content creation channel focused on animation and creative digital content. Creating short animation video concepts, scripts, and visual storytelling experiences.',
-    categories: ['Animation', 'Content Creation', 'Design'],
-    link: 'https://www.youtube.com/@animiaudition',
-  },
-  {
-    id: 'modal-07',
-    img: '/images/portfolio/fuji.jpg',
-    imgSet: '/images/portfolio/fuji.jpg 1x, /images/portfolio/fuji@2x.jpg 2x',
-    cat: 'Video',
-    title: 'Video creation',
-    galleryImg: '/images/portfolio/gallery/g-fuji.jpg',
-    description:
-      'Short-form video production and animation. Scriptwriting, storyboarding, animation, and post-production edits.',
-    categories: ['Animation', 'Editing', 'Storyboarding'],
-    link: 'https://www.youtube.com/@animiaudition',
-  },
-  {
-    id: 'modal-08',
-    img: '/images/portfolio/lamp.jpg',
-    imgSet: '/images/portfolio/lamp.jpg 1x, /images/portfolio/lamp@2x.jpg 2x',
-    cat: 'Video',
-    title: 'Video creation',
-    galleryImg: '/images/portfolio/gallery/g-lamp.jpg',
-    description:
-      'Concept-driven motion pieces focused on visual storytelling and pacing for social platforms.',
-    categories: ['Motion Design', 'After Effects', 'Sound Design'],
-    link: 'https://www.youtube.com/@animiaudition',
-  },
-  {
-    id: 'modal-09',
-    img: '/images/portfolio/rucksack.jpg',
-    imgSet:
-      '/images/portfolio/rucksack.jpg 1x, /images/portfolio/rucksack@2x.jpg 2x',
-    cat: 'Video',
-    title: 'Video creation',
-    galleryImg: '/images/portfolio/gallery/g-rucksack.jpg',
-    description:
-      'Educational animation series and explainer videos with emphasis on clarity and branding.',
-    categories: ['2D Animation', 'Illustration', 'Editing'],
-    link: 'https://www.youtube.com/@animiaudition',
-  },
-  {
-    id: 'modal-10',
-    img: '/images/portfolio/skaterboy.jpg',
-    imgSet:
-      '/images/portfolio/skaterboy.jpg 1x, /images/portfolio/skaterboy@2x.jpg 2x',
-    cat: 'Video',
-    title: 'Video creation',
-    galleryImg: '/images/portfolio/gallery/g-skaterboy.jpg',
-    description:
-      'Creative short films and promotional videos combining live-action elements with motion graphics.',
-    categories: ['Compositing', 'Motion Graphics', 'Color Grading'],
-    link: 'https://www.youtube.com/@animiaudition',
-  },
-  {
-    id: 'modal-11',
-    img: '/images/portfolio/sanddunes.jpg',
-    imgSet:
-      '/images/portfolio/sanddunes.jpg 1x, /images/portfolio/sanddunes@2x.jpg 2x',
-    cat: 'Video',
-    title: 'Video creation',
-    galleryImg: '/images/portfolio/gallery/g-sanddunes.jpg',
-    description:
-      'Documentary-style editing and motion sequences for portfolio showcases.',
-    categories: ['Editing', 'Cinematography', 'Sound Design'],
-    link: 'https://www.youtube.com/@animiaudition',
-  },
-  {
-    id: 'modal-12',
-    img: '/images/portfolio/minimalismo.jpg',
-    imgSet:
-      '/images/portfolio/minimalismo.jpg 1x, /images/portfolio/minimalismo@2x.jpg 2x',
-    cat: 'Video',
-    title: 'Video creation',
-    galleryImg: '/images/portfolio/gallery/g-minimalismo.jpg',
-    description:
-      'Promo videos, intros and short animations tailored for branding and social media.',
-    categories: ['Animation', 'Branding', 'Social Media'],
-    link: 'https://www.youtube.com/@animiaudition',
   },
 ]
 

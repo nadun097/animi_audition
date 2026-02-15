@@ -4,7 +4,6 @@ const socialLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/nadun-anjana' },
   { label: 'GitHub', href: 'https://github.com/nadun097' },
   { label: 'Instagram', href: 'https://www.instagram.com/kn_anjana_._/' },
-  { label: 'YouTube', href: 'https://www.youtube.com/@animiaudition' },
 ]
 
 function Intro() {

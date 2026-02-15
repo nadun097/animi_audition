@@ -6,6 +6,7 @@ import Works from './components/Works'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Preloader from './components/Preloader'
+import Cursor from './components/Cursor'
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false)
@@ -44,6 +45,7 @@ function App() {
       </main>
 
       <Footer />
+      <Cursor />
     </div>
   )
 }
