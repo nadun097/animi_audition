@@ -4,7 +4,7 @@ import { Pagination } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import useScrollAnimation from '../hooks/useScrollAnimation'
-import {codedript2x, f1AutoCare2x, pixora2x, roborover2x, trashcaseApp2x, codedript, f1AutoCare, pixora, roborover, trashcaseApp, gFuji, gLamp, gMinimalismo, gRucksack, gSanddunes, gSkaterboy } from '../assets'
+import {codedript2x, f1AutoCare2x, pixora2x, roborover2x, trashcaseApp2x, codedript, f1AutoCare, pixora, roborover, trashcaseApp, sad, revengex, NFhappy, magicShow, deepjungul } from '../assets'
 
 
 const ArrowIcon = () => (
@@ -85,6 +85,67 @@ const portfolioItems = [
     categories: ['Java', 'JavaFX', 'MVC', 'MySQL'],
     link: 'https://github.com/nadun097',
   },
+ 
+  {
+    id: 'modal-06',
+    img: sad,
+    imgSet: `${sad} 1x`,
+    cat: 'Animation',
+    title: 'XXXTENTACION – SAD! (Official Animated Video)',
+    galleryImg: sad,
+    description:
+      'This animated video was created as a tribute to XXXTENTACION and his powerful music. As a huge fan, I wanted to visually interpret the emotional depth of the lyrics through an anime-inspired storytelling style. My artistic inspiration for this project came from one of the most iconic animators and visual directors, Randy Chriz. His work has deeply influenced my creative direction, and I\'m grateful for the inspiration he continues to provide. Special thanks to Meraki United / Randy Chriz for the constant motivation. Thank you for visiting — I hope you enjoy this visual experience.',
+    categories: ['Animation', 'Anime', 'Music Video'],
+    link: 'https://www.youtube.com/watch?v=DSQt1Tft35M',
+  },
+  {
+    id: 'modal-07',
+    img: revengex,
+    imgSet: `${revengex} 1x`,
+    cat: 'Lyric Video',
+    title: 'Eminem – Revenge X (Official Lyric Video)',
+    galleryImg: revengex,
+    description:
+      'This lyric video was created in collaboration with Meraki United. My role in this project was animation, where I contributed to bringing the visuals and motion design to life in sync with the song\'s intensity and rhythm. This project helped me strengthen my animation timing, visual storytelling, and lyric-based motion design skills.',
+    categories: ['Animation', 'Lyric Video', 'Music'],
+    link: 'https://www.youtube.com/watch?v=lEDVPx42yLw',
+  },
+  {
+    id: 'modal-08',
+    img: NFhappy,
+    imgSet: `${NFhappy} 1x`,
+    cat: 'Lyric Video',
+    title: 'NF – HAPPY (Lyric Video)',
+    galleryImg: NFhappy,
+    description:
+      'This fan-made lyric video was created for Meraki United during the time I worked with the team. The project focuses on emotional expression through clean visuals, typography animation, and mood-driven design that reflects the theme of the song. Working on this video helped me improve my skills in lyric synchronization, animation flow, and emotional visual direction.',
+    categories: ['Animation', 'Lyric Video', 'Music'],
+    link: 'https://www.youtube.com/watch?v=lCqCNgHEImY',
+  },
+  {
+    id: 'modal-09',
+    img: magicShow,
+    imgSet: `${magicShow} 1x`,
+    cat: 'Music Video',
+    title: 'Thelivid1ne – Magic Show (Official Video)',
+    galleryImg: magicShow,
+    description:
+      'This official video was created in collaboration with Meraki United. My contribution to the project was as an animator, where I worked on animating key scenes and enhancing the overall visual style of the video. The project allowed me to experiment with creative animation techniques and dark, atmospheric visuals that match the artist\'s unique style.',
+    categories: ['Animation', 'Music Video', 'Hip Hop'],
+    link: 'https://www.youtube.com/watch?v=j2KyeRnXgJ0',
+  },
+  {
+    id: 'modal-10',
+    img: deepjungul,
+    imgSet: `${deepjungul} 1x`,
+    cat: 'Trailer',
+    title: 'Deep Jungle Festival 2025 – Official Trailer',
+    galleryImg: deepjungul,
+    description:
+      'This official trailer was created in collaboration with Novagraphy. My role in the project was animation, where I helped bring energy, motion, and excitement to the festival visuals through dynamic animation and visual effects. This project focused on promotional storytelling, rhythm-based animation, and creating a strong visual impact for a live event.',
+    categories: ['Animation', 'Festival Trailer', 'Event'],
+    link: 'https://www.youtube.com/watch?v=kBJFUsJdOR4',
+  },
 ]
 
 const testimonials = [
@@ -101,6 +162,10 @@ const testimonials = [
     text: 'Working with Nadun has been a pleasure. His technical abilities in full-stack development combined with his strong design sense make him a versatile and valuable team member who delivers quality results.',
   },
 ]
+
+
+//ADD HERE MORE PORTFOLIO ITEMS FOR THE VIDEO CREATION PART.THERE SHOULD BE AT LEAST 5 ITEMS IN TOTAL. MAKE SURE TO ADD THE CORRESPONDING IMAGES IN THE ASSETS FOLDER AND UPDATE THE IMPORTS AT THE TOP OF THIS FILE.I PROVIDED CORRECT IMAGES FOR THE VIDEO CREATION PART.
+
 
 function Modal({ item, onClose }) {
   if (!item) return null
@@ -145,8 +210,8 @@ function Works() {
     }
   }
 
-  const academicItems = portfolioItems.slice(0, 6)
-  const videoItems = portfolioItems.slice(6)
+  const academicItems = portfolioItems.slice(0, 5)
+  const videoItems = portfolioItems.slice(5)
 
   return (
     <section id="works" className="s-works target-section">

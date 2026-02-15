@@ -39,6 +39,13 @@ import pixora2x from './portfolio/pixora2x.jpg';
 import roborover2x from './portfolio/roborover2x.jpg';
 import trashcaseApp2x from './portfolio/trashcase app2x.jpg';
 
+// --- Video project images ---
+import sad from './portfolio/sad.jpg';
+import revengex from './portfolio/revengex.jpg';
+import NFhappy from './portfolio/NFhappy.jpg';
+import magicShow from './portfolio/magicShow.jpg';
+import deepjungul from './portfolio/deepjungul.jpg';
+
 // --- Portfolio gallery ---
 import gFuji from './portfolio/gallery/g-fuji.jpg';
 import gLamp from './portfolio/gallery/g-lamp.jpg';
@@ -87,6 +94,13 @@ export {
   pixora2x,
   roborover2x,
   trashcaseApp2x,
+
+  // Video project images
+  sad,
+  revengex,
+  NFhappy,
+  magicShow,
+  deepjungul,
 
   // Portfolio gallery
   gFuji,
