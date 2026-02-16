@@ -5,7 +5,8 @@ function Preloader({ isLoaded }) {
       style={{
         opacity: isLoaded ? 0 : 1,
         visibility: isLoaded ? 'hidden' : 'visible',
-        transition: 'opacity 0.8s ease, visibility 0.8s ease',
+        /* speed doubled (was 0.8s) */
+        transition: 'opacity 0.4s ease, visibility 0.4s ease',
       }}
     >
       <div id="loader"></div>

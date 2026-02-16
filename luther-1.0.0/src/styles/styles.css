@@ -1791,8 +1791,9 @@ img,
     padding           : 0;
     background-color  : white;
     border-radius     : 100%;
-    -webkit-animation : sk-scaleout 1.0s infinite ease-in-out;
-    animation         : sk-scaleout 1.0s infinite ease-in-out;
+    /* speed doubled (was 1.0s) */
+    -webkit-animation : sk-scaleout 1s infinite ease-in-out;
+    animation         : sk-scaleout 1s infinite ease-in-out;
 }
 
 @-webkit-keyframes sk-scaleout {
@@ -3187,6 +3188,23 @@ img.u-pull-left {
 .mobile-home-link a {
     padding     : 0 .4rem;
     margin-left : 2.4rem;
+}
+
+/* Logo and site name in header */
+.mobile-home-link .site-logo,
+.main-nav .site-logo {
+    width: 40px;
+    height: auto;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 1.5rem;
+    margin-top: 10px;
+}
+
+.mobile-home-link .site-name,
+.main-nav .site-name {
+    display: inline-block;
+    vertical-align: middle;
 }
 
 .main-nav {

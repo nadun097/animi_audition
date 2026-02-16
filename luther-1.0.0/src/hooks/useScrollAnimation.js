@@ -22,7 +22,8 @@ function useScrollAnimation(refs) {
           current.classList.add('ss-animated')
           const elements = current.querySelectorAll('[data-animate-el]')
           elements.forEach((el, index) => {
-            el.style.transition = `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${200 + index * 400}ms, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${200 + index * 400}ms`
+            /* speed: durations halved (0.8s -> 0.4s) and stagger delays halved */
+            el.style.transition = `opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) ${100 + index * 200}ms, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) ${100 + index * 200}ms`
             el.style.opacity = '1'
             el.style.transform = 'translateY(0)'
           })
@@ -39,7 +40,8 @@ function useScrollAnimation(refs) {
       const elements = current.querySelectorAll('[data-animate-el]')
       elements.forEach((el) => {
         el.style.opacity = '0'
-        el.style.transform = 'translateY(100px)'
+        /* reduce translate distance so animation feels faster */
+        el.style.transform = 'translateY(50px)'
       })
     })
 

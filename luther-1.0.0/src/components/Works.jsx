@@ -148,6 +148,7 @@ const portfolioItems = [
   },
 ]
 
+/*
 const testimonials = [
   {
     avatar: '/images/avatars/user-02.jpg',
@@ -162,6 +163,7 @@ const testimonials = [
     text: 'Working with Nadun has been a pleasure. His technical abilities in full-stack development combined with his strong design sense make him a versatile and valuable team member who delivers quality results.',
   },
 ]
+*/
 
 
 //ADD HERE MORE PORTFOLIO ITEMS FOR THE VIDEO CREATION PART.THERE SHOULD BE AT LEAST 5 ITEMS IN TOTAL. MAKE SURE TO ADD THE CORRESPONDING IMAGES IN THE ASSETS FOLDER AND UPDATE THE IMPORTS AT THE TOP OF THIS FILE.I PROVIDED CORRECT IMAGES FOR THE VIDEO CREATION PART.
@@ -288,12 +290,13 @@ function Works() {
           </ul>
         </div>
 
-        {activeModal && (
+       {activeModal && (
           <Modal item={activeModal} onClose={() => setActiveModal(null)} />
         )}
       </div>
 
-      <div className="row testimonials">
+     
+      {/* <div className="row testimonials">
         <div className="column lg-12" data-animate-block ref={testimonialsRef}>
           <div className="swiper-container testimonial-slider" data-animate-el>
             <Swiper
@@ -321,13 +324,15 @@ function Works() {
                       </cite>
                     </div>
                     <p>{testimonial.text}</p>
-                  </div>
+                  </div> 
                 </SwiperSlide>
               ))}
             </Swiper>
           </div>
+          
         </div>
       </div>
+       */}
     </section>
   )
 }
