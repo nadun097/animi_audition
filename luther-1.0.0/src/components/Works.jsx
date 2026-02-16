@@ -35,7 +35,7 @@ const portfolioItems = [
     description:
       'A blockchain-based digital art marketplace. Implemented frontend using React and TypeScript, integrated smart contracts using Solidity.',
     categories: ['React', 'TypeScript', 'Solidity', 'Vite'],
-    link: 'https://github.com/nadun097',
+    link: 'https://github.com/nadun097/pixora-frontend',
   },
   {
     id: 'modal-02',
@@ -47,7 +47,8 @@ const portfolioItems = [
     description:
       'A vehicle accident news and verification mobile application. Users can search vehicle numbers and identify past accident records including location, damage percentage, and involved vehicles. Built with MVVM and Jetpack Compose.',
     categories: ['Kotlin', 'Jetpack Compose', 'Firebase', 'Supabase'],
-    link: 'https://github.com/nadun097',
+    link: 'https://github.com/JaninduPramod/Crash-Trace',
+    designLink: 'https://www.figma.com/design/GbNxEKf7KljwRw9p62U4Xi/Accident-Report-App-Design?node-id=18-2&t=NPolZtfXxJseYHSd-1',
   },
   {
     id: 'modal-03',
@@ -71,7 +72,8 @@ const portfolioItems = [
     description:
       'A decentralized agreement management platform enabling secure contracts between clients and developers. Features MetaMask authentication, Ethereum transactions via ethers.js, real-time milestone tracking, and decentralized document storage using IPFS.',
     categories: ['React', 'TypeScript', 'Solidity', 'Node.js', 'Docker'],
-    link: 'https://github.com/nadun097',
+    link: 'https://github.com/CodeDript',
+    designLink: 'https://www.figma.com/design/Ai8X9KUeTK2ljaGvwayYWa/CODEDRIPT?node-id=0-1&t=qlubLPR6behMeype-1',
   },
   {
     id: 'modal-05',
@@ -83,7 +85,7 @@ const portfolioItems = [
     description:
       'A desktop-based vehicle scheduling and route management system. Implemented MVC architecture with database integration for efficient vehicle service management.',
     categories: ['Java', 'JavaFX', 'MVC', 'MySQL'],
-    link: 'https://github.com/nadun097',
+    link: 'https://github.com/nadun097/fact1_auto_care_java_project',
   },
  
   {
@@ -190,9 +192,29 @@ function Modal({ item, onClose }) {
               ))}
             </ul>
           </div>
-          <a href={item.link} className="modal-popup__details">
-            Project link
-          </a>
+          <div className="modal-popup__details-wrap">
+            {item.link && (
+              <a
+                href={item.link}
+                className="modal-popup__details"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Project link
+              </a>
+            )}
+
+            {item.designLink && (
+              <a
+                href={item.designLink}
+                className="modal-popup__details"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Design (Figma)
+              </a>
+            )}
+          </div>
         </div>
       </div>
     </div>

@@ -4129,21 +4129,34 @@ img.u-pull-left {
     display : none;
 }
 
+.modal-popup__details-wrap {
+    /* place all action links in the modal top-left and allow multiple buttons */
+    position   : absolute;
+    top        : var(--vspace-1);
+    left       : var(--vspace-1);
+    display    : flex;
+    gap        : var(--vspace-0_5);
+    flex-wrap  : wrap;
+    align-items: center;
+}
+
 .modal-popup__details {
-    background-color : rgba(0, 0, 0, 0.3);
+    /* increased background opacity for stronger contrast */
+    background-color : rgba(0, 0, 0, 0.7);
     font-size        : var(--text-xs);
     line-height      : var(--vspace-1_25);
     color            : white;
     padding          : 0 1.2rem;
-    position         : absolute;
-    top              : var(--vspace-1);
-    left             : var(--vspace-1);
+    display          : inline-block; /* was absolute */
+    border-radius    : 4px;
+    text-decoration  : none;
 }
 
 .modal-popup__details:focus,
 .modal-popup__details:hover {
     background-color : var(--color-body);
     color            : white;
+    text-decoration  : none;
 }
 
 /* ------------------------------------------------------------------- 
