@@ -1,3 +1,84 @@
+/* Blog modal popup styles */
+.blog-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.blog-modal {
+    background: #181818;
+    color: #fff;
+    border-radius: 12px;
+    max-width: 500px;
+    width: 90vw;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    position: relative;
+    animation: blogModalFadeIn 0.25s;
+}
+.blog-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1;
+}
+@keyframes blogModalFadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: none; }
+}
+/* Blog card area uses same layout as works section (no fixed margin override) */
+/* Blog dropdown smooth transition */
+.blog-dropdown-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s;
+    /* background removed for transparency */
+    border-radius: 0 0 12px 12px;
+    margin-top: 0.5rem;
+    padding: 0 1.5rem;
+}
+.blog-dropdown-details.open {
+    opacity: 1;
+    /* max-height is set inline for smooth extraction */
+    padding-bottom: 1.5rem;
+}
+
+/* Blog details page typography */
+.blog-details-content {
+    line-height: 1.6;
+}
+.blog-details-content h3,
+.blog-details-content h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+.blog-details-content p {
+    margin-bottom: 1rem;
+}
+.blog-details-content ul,
+.blog-details-content ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+.blog-details-content pre {
+    background: #222;
+    color: #eee;
+    padding: 0.75rem;
+    border-radius: 6px;
+    overflow-x: auto;
+}
 /* =================================================================== 
  * Nadun Anjana Main Stylesheet
  * Template Ver. 1.0.0
