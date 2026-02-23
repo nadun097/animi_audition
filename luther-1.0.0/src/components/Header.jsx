@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 const navLinks = [
-  { label: 'Intro', href: '#intro' },
-  { label: 'About', href: '#about' },
-  { label: 'Works', href: '#works' },
-  { label: 'Say Hello', href: '#contact' },
+  { label: 'Intro', href: '#intro', type: 'anchor' },
+  { label: 'About', href: '#about', type: 'anchor' },
+  { label: 'Works', href: '#works', type: 'anchor' },
+  { label: 'Blog', href: '/blog', type: 'route' },
 ]
 
 function Header() {
+  const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('intro')
 
@@ -91,14 +93,22 @@ function Header() {
             {navLinks.map((link) => (
               <li
                 key={link.href}
-                className={activeSection === link.href.slice(1) ? 'current' : ''}
+                className={
+                  link.type === 'route'
+                    ? (location.pathname === link.href ? 'current' : '')
+                    : (activeSection === link.href.slice(1) ? 'current' : '')
+                }
               >
-                <a
-                  href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
-                >
-                  {link.label}
-                </a>
+                {link.type === 'route' ? (
+                  <Link to={link.href}>{link.label}</Link>
+                ) : (
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleNavClick(e, link.href)}
+                  >
+                    {link.label}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
