@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Cursor from '../components/Cursor'
