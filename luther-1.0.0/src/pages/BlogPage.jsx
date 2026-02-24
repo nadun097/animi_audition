@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import React from 'react'
 import Blog from '../components/Blog'
 import BlogHero from '../components/BlogHero'

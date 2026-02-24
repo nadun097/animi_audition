@@ -1,3 +1,5 @@
+export const runtime = 'edge';
+
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import webdevImg from '../assets/portfolio/gallery/webdevolopment.jpg'
