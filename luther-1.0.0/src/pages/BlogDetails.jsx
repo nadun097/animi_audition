@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import Cursor from '../components/Cursor'
 import webdevImg from '../assets/portfolio/gallery/webdevolopment.jpg'
@@ -107,7 +108,7 @@ const blogPosts = [
             <img src={code03} alt="useAuthContext hook" style={{maxWidth:'100%',marginBottom:16}} />
           </li>
         </ol>
-        <p>Now your React app is secured 🎉</p>
+        <p>Now your React app is secured</p>
 
         <h3>Why Use Asgardeo?</h3>
         <ul>
@@ -166,6 +167,12 @@ const blogPosts = [
 export default function BlogDetails() {
   const { id } = useParams()
   const navigate = useNavigate()
+
+  // scroll to top whenever the id changes (new post opened)
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [id])
+
   const post = blogPosts.find((b) => b.id === id)
   if (!post) return <div style={{padding:40}}>Blog not found.</div>
   return (
