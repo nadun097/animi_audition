@@ -9,6 +9,17 @@ import Cursor from '../components/Cursor'
 
 const BlogPage = () => (
   <div className="s-pagewrap">
+    <div className="circles">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
     <Header />
     <main className="s-content">
       <BlogHero />

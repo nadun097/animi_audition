@@ -11,9 +11,7 @@ const BlogHero = () => (
           <span className="vline vline--3"></span>
           <span className="vline vline--4"></span>
           Welcome to My <span className="name-glow">Blog</span>,<br />
-          where I share insights,<br />
-          stories, and tutorials<br />
-          on design & development.
+         
         </h1>
       </div>
     </div>

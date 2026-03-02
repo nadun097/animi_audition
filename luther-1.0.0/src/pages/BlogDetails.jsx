@@ -24,10 +24,10 @@ const blogPosts = [
     img: asgardeoImg,
     cat: 'Authentication',
     title: 'Getting Started with WSO2 Asgardeo – Secure Authentication Made Simple',
-    description: 'A beginner-friendly guide to integrating WSO2 Asgardeo for secure authentication in your web applications.',
+    description: 'A beginner friendly guide to integrating WSO2 Asgardeo for secure authentication in your web applications.',
     details: (
       <>
-        <h3>In today’s digital world, security is not optional — it’s essential.</h3>
+        <h3>In today’s digital world, security is not optional it’s essential.</h3>
         <p>
           Whether you are building a web app, mobile app, or enterprise system,
           authentication and authorization are critical components. That’s where
@@ -36,12 +36,12 @@ const blogPosts = [
 
         <h3>What is WSO2 Asgardeo?</h3>
         <p>
-          WSO2 Asgardeo is a cloud-based Customer Identity and Access Management
+          WSO2 Asgardeo is a cloud based Customer Identity and Access Management
           (CIAM) platform. It allows developers to easily add:
         </p>
         <ul>
           <li>Secure login &amp; registration</li>
-          <li>Single Sign-On (SSO)</li>
+          <li>Single Sign On (SSO)</li>
           <li>Multi-Factor Authentication (MFA)</li>
           <li>Social login (Google, Facebook, etc.)</li>
           <li>Role-based access control</li>
@@ -114,16 +114,16 @@ const blogPosts = [
 
         <h3>Why Use Asgardeo?</h3>
         <ul>
-          <li>Cloud-based – No server maintenance</li>
-          <li>Developer-friendly SDKs</li>
-          <li>Enterprise-grade security</li>
+          <li>Cloud based – No server maintenance</li>
+          <li>Developer friendly SDKs</li>
+          <li>Enterprise grade security</li>
           <li>Easy integration</li>
           <li>Free tier available</li>
         </ul>
         <p>It saves development time and ensures your application follows modern
           security standards.</p>
 
-        <h3>Real-World Use Case</h3>
+        <h3>Real World Use Case</h3>
         <p>Imagine building:</p>
         <ul>
           <li>A Daily Quote App</li>
