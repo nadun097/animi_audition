@@ -24,7 +24,7 @@ const blogPosts = [
     img: asgardeoImg,
     cat: 'Authentication',
     title: 'Getting Started with WSO2 Asgardeo – Secure Authentication Made Simple',
-    description: 'A beginner-friendly guide to integrating WSO2 Asgardeo for secure authentication in your web applications.',
+    description: 'A beginner friendly guide to integrating WSO2 Asgardeo for secure authentication in your web applications.',
     details: (
       <>
         <h3>In today’s digital world, security is not optional it’s essential.</h3>
@@ -41,7 +41,7 @@ const blogPosts = [
         </p>
         <ul>
           <li>Secure login &amp; registration</li>
-          <li>Single Sign-On (SSO)</li>
+          <li>Single Sign On (SSO)</li>
           <li>Multi-Factor Authentication (MFA)</li>
           <li>Social login (Google, Facebook, etc.)</li>
           <li>Role-based access control</li>

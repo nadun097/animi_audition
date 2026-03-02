@@ -20,7 +20,7 @@ const blogPosts = [
     id: 'blog-02',
     img: asgardeoImg,
     cat: 'Authentication',
-    title: 'Getting Started with WSO2 Asgardeo – Secure Authentication Made Simple',
+    title: 'Getting Started with WSO2 Asgardeo Secure Authentication Made Simple',
     description: 'A beginner-friendly guide to integrating WSO2 Asgardeo for secure authentication in your web applications.',
     details: 'This post walks you through setting up WSO2 Asgardeo, configuring OAuth2/OpenID Connect, and implementing secure login flows. Perfect for developers looking to add robust authentication to their apps with minimal hassle.',
   },
